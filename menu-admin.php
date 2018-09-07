@@ -28,6 +28,14 @@
             </li>
 			
 			<li class="treeview">
+              <a href="#"><i class="fa fa-tag"></i> <span>Data Transaksi</span><i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="index.php?view=pembelian"><i class="fa fa-circle-o"></i> Transaksi Pembelian</a></li>
+                <li><a href="index.php?view=penjualan"><i class="fa fa-circle-o"></i> Transaksi Penjualan</a></li>
+              </ul>
+            </li>
+			
+			<li class="treeview">
               <a href="#"><i class="fa fa-th"></i> <span>Data Master Mutasi</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="index.php?view=polda"><i class="fa fa-circle-o"></i> POLDA</a></li>
@@ -37,10 +45,9 @@
             </li>
 
             <li class="treeview">
-              <a href="#"><i class="fa fa-tag"></i> <span>Data Transaksi</span><i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class="fa fa-tag"></i> <span>Mutasi POLRI</span><i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="index.php?view=pembelian"><i class="fa fa-circle-o"></i> Transaksi Pembelian</a></li>
-                <li><a href="index.php?view=penjualan"><i class="fa fa-circle-o"></i> Transaksi Penjualan</a></li>
+                <li><a href="index.php?view=mutasi"><i class="fa fa-circle-o"></i> Mutasi POLRI</a></li>
               </ul>
             </li>
 
