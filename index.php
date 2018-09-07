@@ -1,5 +1,4 @@
-
-<?php
+<?php 
   session_start();
   error_reporting(0);
   include "config/koneksi.php";
@@ -21,7 +20,7 @@
               $foto = 'dist/img/avatar5.png';
            }else{
               $foto = 'foto_pegawai/'.$gu[foto];
-           }
+           }               
       }elseif($_SESSION[level]=='kasir'){
           $iden = mysql_fetch_array(mysql_query("SELECT * FROM iw_users where username='$_SESSION[id]'"));
            $nama =  $iden[nama_lengkap];
@@ -30,7 +29,7 @@
               $foto = 'dist/img/avatar5.png';
            }else{
               $foto = 'foto_pegawai/'.$gu[foto];
-           }
+           }     
       }
 ?>
 <!DOCTYPE html>
@@ -111,12 +110,12 @@
 <!-- end data tampil ajax -->
     <style type="text/css"> .files{ position:absolute; z-index:2; top:0; left:0; filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; opacity:0; background-color:transparent; color:transparent; } </style>
     <script type="text/javascript" src="plugins/jQuery/jquery-1.12.3.min.js"></script>
-    <script language="javascript" type="text/javascript">
+    <script language="javascript" type="text/javascript"> 
       var maxAmount = 160;
       function textCounter(textField, showCountField) {
         if (textField.value.length > maxAmount) {
           textField.value = textField.value.substring(0, maxAmount);
-        } else {
+        } else { 
           showCountField.value = maxAmount - textField.value.length;
         }
       }
@@ -136,7 +135,7 @@
       </header>
 
       <aside class="main-sidebar">
-            <?php
+            <?php 
               if ($_SESSION[level]=='user'){
                 include "menu-user.php";
               }elseif ($_SESSION[level]=='kasir'){
@@ -144,7 +143,7 @@
               }elseif ($_SESSION[level]=='admin'){
                 include "menu-admin.php";
               }else{
-                include "menu-default.php";
+                include "menu-default.php"; 
               }
             ?>
       </aside>
@@ -155,7 +154,7 @@
         </section>
 
         <section class="content">
-        <?php
+        <?php 
           if ($_GET[view]=='home' OR $_GET[view]==''){
               if($_SESSION[level]=='admin'){
                   include "application/home_admin.php";
@@ -200,7 +199,17 @@
             echo "<div class='row'>";
                     include "application/master_type.php";
             echo "</div>";
-          }
+          }  
+// DATA TRANSAKSI ///////////////////////////////////////////////
+          elseif ($_GET[view]=='pembelian'){
+            echo "<div class='row'>";
+                    include "application/transaksi_pembelian.php";
+            echo "</div>";
+          }elseif ($_GET[view]=='penjualan'){
+            echo "<div class='row'>";
+                    include "application/transaksi_penjualan.php";
+            echo "</div>";
+          }		  
 // DATA MASTER MUTASI ////////////////////////////////////////////////////
           elseif ($_GET[view]=='polda'){
             echo "<div class='row'>";
@@ -214,17 +223,13 @@
             echo "<div class='row'>";
                     include "application/master_pendidikan.php";
             echo "</div>";
-          }
-// DATA TRANSAKSI ///////////////////////////////////////////////
-          elseif ($_GET[view]=='pembelian'){
+          }     
+// DATA MUTASI POLRI ///////////////////////////////////////////////
+          elseif ($_GET[view]=='mutasi'){
             echo "<div class='row'>";
-                    include "application/transaksi_pembelian.php";
+                    include "application/mutasi_polri.php";
             echo "</div>";
-          }elseif ($_GET[view]=='penjualan'){
-            echo "<div class='row'>";
-                    include "application/transaksi_penjualan.php";
-            echo "</div>";
-          }
+          }		  
 // DATA LAPORAN ////////////////////////////////////////////////////
           elseif ($_GET[view]=='laporanpembelian'){
             echo "<div class='row'>";
@@ -298,7 +303,7 @@
     <script src="dist/js/app.min.js"></script>
 
     <script>
-      $(function () {
+      $(function () { 
         $("#example1").DataTable();
         $('#example2').DataTable({
           "paging": true,
@@ -323,11 +328,11 @@
     </script>
 
 
-
+    
   </body>
 </html>
 
-<?php
+<?php 
   }else{
     include "login.php";
   }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 04, 2018 at 04:09 AM
+-- Generation Time: Sep 06, 2018 at 11:42 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -85,6 +85,32 @@ INSERT INTO `iw_merk` (`id_merk`, `nm_merk`, `keterangan`, `status`) VALUES
 (1, 'YAMAHA', 'ban corsa', 'N'),
 (2, 'HONDA', '', 'Y'),
 (3, 'SUZUKI', '', 'Y');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `iw_mutasi`
+--
+
+CREATE TABLE IF NOT EXISTS `iw_mutasi` (
+`id_mutasi` int(5) NOT NULL,
+  `nm_anggota` varchar(100) NOT NULL,
+  `id_polda` int(11) NOT NULL,
+  `id_pangkat` int(11) NOT NULL,
+  `id_pendidikan` int(11) NOT NULL,
+  `keterangan` text NOT NULL,
+  `status` enum('Y','N') NOT NULL DEFAULT 'Y'
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `iw_mutasi`
+--
+
+INSERT INTO `iw_mutasi` (`id_mutasi`, `nm_anggota`, `id_polda`, `id_pangkat`, `id_pendidikan`, `keterangan`, `status`) VALUES
+(1, 'TEST 1', 0, 0, 0, 'q', 'N'),
+(2, 'TEST 2', 0, 0, 0, '', 'Y'),
+(3, 'WWWW', 0, 0, 0, '0', 'N'),
+(4, '2Q', 0, 0, 0, '2', 'N');
 
 -- --------------------------------------------------------
 
@@ -423,6 +449,12 @@ ALTER TABLE `iw_merk`
  ADD PRIMARY KEY (`id_merk`);
 
 --
+-- Indexes for table `iw_mutasi`
+--
+ALTER TABLE `iw_mutasi`
+ ADD PRIMARY KEY (`id_mutasi`);
+
+--
 -- Indexes for table `iw_pangkat`
 --
 ALTER TABLE `iw_pangkat`
@@ -513,6 +545,11 @@ MODIFY `id_kategori` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 ALTER TABLE `iw_merk`
 MODIFY `id_merk` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `iw_mutasi`
+--
+ALTER TABLE `iw_mutasi`
+MODIFY `id_mutasi` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `iw_pangkat`
 --
