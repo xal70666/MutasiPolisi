@@ -200,7 +200,21 @@
             echo "<div class='row'>";
                     include "application/master_type.php";
             echo "</div>";
+<<<<<<< HEAD
           }
+=======
+          }  
+// DATA TRANSAKSI ///////////////////////////////////////////////
+          elseif ($_GET[view]=='pembelian'){
+            echo "<div class='row'>";
+                    include "application/transaksi_pembelian.php";
+            echo "</div>";
+          }elseif ($_GET[view]=='penjualan'){
+            echo "<div class='row'>";
+                    include "application/transaksi_penjualan.php";
+            echo "</div>";
+          }		  
+>>>>>>> babfd38df4acd38b54eb883366327c27c5242994
 // DATA MASTER MUTASI ////////////////////////////////////////////////////
           elseif ($_GET[view]=='polda'){
             echo "<div class='row'>";
@@ -214,17 +228,19 @@
             echo "<div class='row'>";
                     include "application/master_pendidikan.php";
             echo "</div>";
+<<<<<<< HEAD
           }
 // DATA TRANSAKSI ///////////////////////////////////////////////
           elseif ($_GET[view]=='pembelian'){
+=======
+          }     
+// DATA MUTASI POLRI ///////////////////////////////////////////////
+          elseif ($_GET[view]=='mutasi'){
+>>>>>>> babfd38df4acd38b54eb883366327c27c5242994
             echo "<div class='row'>";
-                    include "application/transaksi_pembelian.php";
+                    include "application/mutasi_polri.php";
             echo "</div>";
-          }elseif ($_GET[view]=='penjualan'){
-            echo "<div class='row'>";
-                    include "application/transaksi_penjualan.php";
-            echo "</div>";
-          }
+          }		  
 // DATA LAPORAN ////////////////////////////////////////////////////
           elseif ($_GET[view]=='laporanpembelian'){
             echo "<div class='row'>";
